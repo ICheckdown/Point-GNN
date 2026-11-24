@@ -1,2 +1,47 @@
 pointgnn-env/
 pointgnn-env/
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# TensorBoard logs
+graph_logs/
+*.tfevents.*
+
+# Model weights
+*.pth
+*.pt
+*.ckpt*
+*.safetensors
+
+# Evaluation outputs
+results/
+checkpoints/**/eval_*/
+
+# KITTI dataset files
+**/velodyne/
+**/image_2/
+**/calib/
+**/label_2/
+
+# macOS
+.DS_Store
+
+# Generated Triton weights and benchmark data
+triton_testing/torch_weights/
+triton_testing/speedup/data/
+triton_testing/speedup2/data/
+*.npy
+*.npz
+
+triton_testing/speedup/
+triton_testing/speedup2/
+
+triton_testing/speedup/
+triton_testing/speedup2/

@@ -202,11 +202,16 @@ def gen_disjointed_rnn_local_graph_v3(
         ]
 
     vertices_v = np.concatenate(indices)
-    vertices_i = np.concatenate([
-        i * np.ones(neighbors.size, dtype=np.int32)
-        for i, neighbors in enumerate(indices)
-    ])
-    vertices = np.array([vertices_v, vertices_i]).transpose()
+    counts = np.fromiter(
+    (neighbors.size for neighbors in indices),
+    dtype=np.intp,
+    count=len(indices)
+)
+    vertices_i = np.repeat(
+    np.arange(len(indices), dtype=np.int32),
+    counts
+)
+    vertices = np.column_stack((vertices_v, vertices_i))
     return vertices
 
 

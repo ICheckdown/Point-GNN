@@ -1,0 +1,53 @@
+[
+  {
+    "name": "L1_extract_fc0",
+    "M": 523000,
+    "K": 4,
+    "N": 32,
+    "weight": 1,
+    "bias_relu": false
+  },
+  {
+    "name": "L1_extract_fc1",
+    "M": 523000,
+    "K": 32,
+    "N": 64,
+    "weight": 1,
+    "bias_relu": false
+  },
+  {
+    "name": "L1_extract_fc2_bias_relu",
+    "M": 523000,
+    "K": 64,
+    "N": 128,
+    "weight": 1,
+    "bias_relu": true
+  },
+  {
+    "name": "L1_extract_fc3_bias_relu",
+    "M": 523000,
+    "K": 128,
+    "N": 300,
+    "weight": 1,
+    "bias_relu": true
+  },
+  
+  {
+    "name": "L2_extract_fc0_bias_relu",
+    "M": 696000,
+    "K": 303,
+    "N": 300,
+    "weight": 3,
+    "bias_relu": true,
+    "note": "696000 rows PER forward call; repeated 3 times for l2/l3/l4; verify this with actual edge tensor shape"
+  },
+  {
+    "name": "L2_extract_fc1_bias_relu",
+    "M": 696000,
+    "K": 300,
+    "N": 300,
+    "weight": 3,
+    "bias_relu": true,
+    "note": "696000 rows PER forward call; repeated 3 times for l2/l3/l4; verify this with actual edge tensor shape"
+  }
+]
